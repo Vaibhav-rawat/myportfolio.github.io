@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
 *,*::before,*::after{
     font-family: 'Montserrat', sans-serif;
@@ -245,6 +245,7 @@ section {
 
 .partition-section {
     position: relative;
+    height: 100vh;
 }
 
 
@@ -261,6 +262,59 @@ section {
 
 .about-section {
     background-color: #2d4c69;
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    place-items: center;
+    grid-template-areas: 
+    "one two three";
+}
+.about-section-banner {
+    grid-area: one;
+    position: relative;
+    height: 70%;
+    width: 70%;
+}
+
+.about-section-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 12px solid #6886A1;
+}
+
+.about-section-cross{
+    grid-area: two;
+    font-size: 4rem;
+    color: #6886A1;
+}
+
+.about-section-details {
+    grid-area: three;
+    position: relative;
+    height: 70%;
+    width: 70%;
+    border: 12px solid #1E3B55;
+}
+
+.about-section-details ul{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+.about-section-details li{
+    list-style: none;
+    font-weight: 700;
+    line-height: 2rem;
 }
 
 .about-section.partition-section::after {
