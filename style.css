@@ -140,7 +140,6 @@
     transform: rotate(-41deg);
 }
 
-
 /* #################### Styling ################ */
 
 
@@ -369,5 +368,29 @@ section {
 
     .partition-section::after {
         bottom: -0.8%;
+    }
+    .about-section {
+        grid-template-columns: 1fr;
+        grid-template-rows : 45% 10% 45%;
+        grid-template-areas: 
+        "one"
+        "two"
+        "three";
+    }
+    .about-section-banner {
+        height: 85%;
+        width: 85%;
+    }
+
+    .about-section-cross{
+        font-size: 2rem;
+    }
+    
+    .about-section-details {
+        height: 85%;
+        width: 85%;
+    }
+    .about-section-details li{
+        word-wrap: break-word;
     }
 }
