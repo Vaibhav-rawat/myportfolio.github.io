@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* #################### destop nav ################ */
 
 .desk-nav {
@@ -33,8 +38,76 @@
     height: 100%;
     color: white;
     font-weight: bold;
-    font-size: 4vmin;
+    font-size: 5vmin;
 }
+
+.logo-wrapper {
+    position : relative;
+}
+
+.name-front{
+    display : block;
+    color : #ffffff;
+    position: relative;
+}
+
+.name-front::after{
+    content: "\005F";
+    position: absolute;
+    display: none;
+    bottom: 5%;
+    right: -12%;
+    opacity: 0.8;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-name : blink;
+}
+
+.logo-wrapper:hover > .name-front::after{
+    display: block;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 0.8;
+    }
+}
+
+.name-behind {
+    position : absolute;
+    transform: rotate(-2.5deg);
+    top : 0;
+    left : 0;
+    color : #cf0000;
+    opacity : 0.65;
+    mix-blend-mode: darken;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-name : pulsate;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+    50% {
+        transform: scale(1.025) rotate(1.5deg) translateY(2.5px);
+    }
+    0% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+}
+  
 
 .desk-nav ul{
     grid-area: two;
@@ -147,7 +220,11 @@ nav {
     position: relative;
 }
 
-nav a {
+.logo-link {
+    text-decoration: none;
+}
+
+nav a:not(.logo-link) {
     position: relative;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -156,12 +233,12 @@ nav a {
     transition: all 0.1s ease-in-out;
 }
 
-nav a:hover {
+nav a:not(.logo-link):hover {
     text-shadow: 0px 5px 4px #292929;
     transform: translateY(-10%);
 }
 
-nav a:after {
+nav a:not(.logo-link):after {
     position: absolute;
     content: "";
     top: 110%;
@@ -174,7 +251,7 @@ nav a:after {
     transition: all 0.2s ease-in-out;
 }
 
-nav a:hover:after {
+nav a:not(.logo-link):hover:after {
     box-shadow: 0px 5px 4px #292929;
     transform: scale(1);
 }
@@ -183,6 +260,7 @@ nav a:hover:after {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-behavior: smooth;
     perspective: 10px;
 }
 
@@ -364,6 +442,7 @@ section {
     .main-section {
         position: absolute;
         top: 100%;
+        border-radius: 1rem 1rem 0 0;
     }
 
     .partition-section::after {
@@ -376,6 +455,7 @@ section {
         "one"
         "two"
         "three";
+        border-radius: 1rem 1rem 0 0;
     }
     .about-section-banner {
         height: 85%;
