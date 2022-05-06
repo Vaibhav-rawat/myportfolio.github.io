@@ -200,7 +200,7 @@
 }
 
 .hamburger_links li a{
-    font-size: 6vmin;
+    font-size: 5vmin!important;
 }
 
 .mob-nav input[type="checkbox"]:checked ~ .hamburger_links{
