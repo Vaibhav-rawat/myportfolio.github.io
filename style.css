@@ -310,7 +310,7 @@ header {
 }
 
 .gradient-text{
-    background-image: linear-gradient(90deg, rgb(24, 16, 143),rgb(179, 60, 66), rgb(24, 16, 143));
+    background-image: linear-gradient(90deg, rgb(45 38 159),rgb(241 92 99), rgb(51 44 161));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -345,9 +345,11 @@ section {
 
 .partition-section {
     position: relative;
-    height: 100vh;
 }
 
+.partition-section:first-child{
+    height: 100vh;
+}
 
 .partition-section::after {
     position: absolute;
